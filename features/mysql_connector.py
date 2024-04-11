@@ -1,6 +1,9 @@
 import mysql.connector
+from datetime import date
+from time import sleep
+from os import system
 
-def sql_connector(table, values):
+def sql_connector():
     connection = mysql.connector.connect(
         host='localhost',
         user='root',
@@ -11,10 +14,10 @@ def sql_connector(table, values):
     cursor = connection.cursor()
 
     command = f'''
-                INSERT INTO {table} 
-                    ()
+                INSERT INTO cliente 
+                    (cliente_id, primeiro_nome, ultimo_nome, email, telefone, data_nascimento, num_habilitacao, data_registro, status_ativacao)  
                 VALUES
-                    ({values})
+                    (%s, %s, %s, %s, %s, %s, %s, %s, %s)
 '''
 
     cursor.execute(command) #Execua o comando SQL
@@ -23,8 +26,6 @@ def sql_connector(table, values):
 
     cursor.close() #Fecha conexão
     connection.close() #Fecha conexão
-
-
 
 
 
