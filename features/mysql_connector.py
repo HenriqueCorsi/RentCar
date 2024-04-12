@@ -1,5 +1,5 @@
 import mysql.connector
-from datetime import date
+from customer_registration import *
 
 def sql_connector():
     connection = mysql.connector.connect(
@@ -13,9 +13,9 @@ def sql_connector():
 
     command = f'''
                 INSERT INTO cliente 
-                    (cliente_id, primeiro_nome, ultimo_nome, email, telefone, data_nascimento, num_habilitacao, data_registro, status_ativacao)  
+                    (primeiro_nome, ultimo_nome, email, telefone, data_nascimento, num_habilitacao, data_registro, status_ativacao)  
                 VALUES
-                    (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    (%s, %s, %s, %s, %s, %s, %s, %s)
 '''
 
     cursor.execute(command) #Execua o comando SQL
@@ -24,8 +24,6 @@ def sql_connector():
 
     cursor.close() #Fecha conexão
     connection.close() #Fecha conexão
-
-
 
 
 
