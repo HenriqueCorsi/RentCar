@@ -68,3 +68,21 @@ def get_phone_number():
         except Exception as e:
             exit_except()
 
+#Pega Data
+def get_date():
+    date_pattern = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+    while True:
+        try:
+            system('cls')
+            date = input('Data Nascimento (ANO-MÊS-DIA): ')
+
+            if date_pattern.match(date):
+                return date
+            else:
+                exit_except()
+        except Exception as e:
+            exit_except()
+
+        
+
