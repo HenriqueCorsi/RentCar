@@ -1,6 +1,7 @@
 from time import sleep
 from os import system
 import re
+import datetime
 
 def exit_except():
     system('cls')
@@ -98,3 +99,7 @@ def get_licence_number():
             else:
                 exit_except()
         
+def get_registration_date():
+    registration_date = datetime.date.today()
+    return registration_date
+
