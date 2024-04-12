@@ -84,5 +84,17 @@ def get_date():
         except Exception as e:
             exit_except()
 
+def get_licence_number():
+    while True:
+        try:
+            system('cls')
+            licence_number = int(input('Número Habilitação: '))  
+        except Exception as e:
+            exit_except()
+        else:
+            licence_number = str(licence_number)
+            if len(licence_number) == 12:
+                return licence_number
+            else:
+                exit_except()
         
-
