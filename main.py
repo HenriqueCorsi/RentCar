@@ -16,6 +16,7 @@ while True:
         system('cls')
     else:
         if select_user == 1: # Cadastro de Cliente
+            
             first_name = get_first_name()
             last_name = get_last_name()
             email = get_email()
