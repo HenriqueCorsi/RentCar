@@ -1,7 +1,6 @@
 import mysql.connector
-from customer_registration import *
 
-def sql_connector():
+def sql_connector(table, column, value):
     connection = mysql.connector.connect(
         host='localhost',
         user='root',
@@ -12,13 +11,13 @@ def sql_connector():
     cursor = connection.cursor()
 
     command = f'''
-                INSERT INTO cliente 
-                    (primeiro_nome, ultimo_nome, email, telefone, data_nascimento, num_habilitacao, data_registro, status_ativacao)  
+                INSERT INTO {table}
+                    ({column})
                 VALUES
                     (%s, %s, %s, %s, %s, %s, %s, %s)
 '''
 
-    cursor.execute(command) #Execua o comando SQL
+    cursor.execute(command, value) #Execua o comando SQL
 
     connection.commit() #Faz o commit pra dentro do Banco de Dados
 
