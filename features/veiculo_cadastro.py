@@ -30,7 +30,6 @@ def get_model():
             else:
                 exit_except()        
 
-
 #Pega Ano
 def get_year():
     while True:
@@ -44,7 +43,17 @@ def get_year():
         
 #Pega Placa
 def get_plate():
-    pass
+    while True:
+        system('cls')
+        try:
+            plate = input('Placa: ')
+        except Exception as e:
+            exit_except()
+        else:
+            if len(plate) == 7:
+                return plate
+            else:
+                exit_except() 
 
 #Pega Cor
 def get_color():
