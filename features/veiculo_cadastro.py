@@ -33,8 +33,15 @@ def get_model():
 
 #Pega Ano
 def get_year():
-    pass
-
+    while True:
+        system('cls')
+        try:
+            year = int(input('Ano: '))
+        except Exception as e:
+            exit_except()
+        else:
+            return year
+        
 #Pega Placa
 def get_plate():
     pass
