@@ -57,7 +57,17 @@ def get_plate():
 
 #Pega Cor
 def get_color():
-    pass
+   while True:
+        system('cls')
+        try:
+            color = input('Cor: ')
+        except Exception as e:
+            exit_except()
+        else:
+            if color:
+                return color
+            else:
+                exit_except() 
 
 #Pega Tipo de Combustivel
 def get_type_fuel():
