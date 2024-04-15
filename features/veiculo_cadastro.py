@@ -71,7 +71,17 @@ def get_color():
 
 #Pega Tipo de Combustivel
 def get_type_fuel():
-    pass
+    while True:
+        system('cls')
+        try:
+            type_fuel = input('Tipo Combustível: ').lower()
+        except Exception as e:
+            exit_except()
+        else:
+            if type_fuel == 'flex' or type_fuel == 'gasolina' or type_fuel == 'álcool':
+                return type_fuel
+            else:
+                exit_except()
 
 #Pega Disponibilidade
 def get_availabe():
