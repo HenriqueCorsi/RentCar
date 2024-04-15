@@ -3,7 +3,16 @@ from customer_registration import exit_except
 
 #Pega Marca
 def get_brand():
-    pass
+    while True:
+        try:
+            brand = input('Marca: ')
+        except Exception as e:
+            exit_except()
+        else:
+            if brand:
+                return brand
+            else:
+                exit_except()        
 
 #Pega Modelo
 def get_model():
