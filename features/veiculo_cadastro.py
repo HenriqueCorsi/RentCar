@@ -1,9 +1,11 @@
 # vehicle registration
 from customer_registration import exit_except
+from os import system
 
 #Pega Marca
 def get_brand():
     while True:
+        system('cls')
         try:
             brand = input('Marca: ')
         except Exception as e:
@@ -16,7 +18,18 @@ def get_brand():
 
 #Pega Modelo
 def get_model():
-    pass
+      while True:
+        system('cls')
+        try:
+            model = input('Modelo: ')
+        except Exception as e:
+            exit_except()
+        else:
+            if model:
+                return model
+            else:
+                exit_except()        
+
 
 #Pega Ano
 def get_year():
