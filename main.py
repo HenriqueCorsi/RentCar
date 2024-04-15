@@ -2,6 +2,7 @@ from features import menu
 from time import sleep
 from os import system
 from features.customer_registration import *
+from features.veiculo_cadastro import *
 from features.mysql_connector import sql_connector
 
 while True:
@@ -35,7 +36,22 @@ while True:
         
             break
         elif select_user == 2: # Cadastro de Veículo
-            pass
+            
+            brand = get_brand()
+            model = get_model()
+            vehicle_year = get_year()
+            plate = get_plate()
+            vehicle_color = get_color()
+            type_fuel = get_type_fuel()
+            availability = get_availabe()
+            daily_price = get_daily_value()
+
+            table = 'veiculo'
+            column_vehicle = ('marca', 'modelo', 'ano', 'placa', 'cor', 'tipo_combustivel', 'disponivel', 'valor_diaria')
+            formatted_column = ', '.join(column_vehicle )
+            values = (brand, model, vehicle_year, plate, vehicle_color, type_fuel, availability, daily_price)
+
+            sql_connector(table, formatted_column, values)
             break
         elif select_user == 3: # Cadastro de Reserva
             pass
