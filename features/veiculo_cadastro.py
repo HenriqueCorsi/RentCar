@@ -85,8 +85,25 @@ def get_type_fuel():
 
 #Pega Disponibilidade
 def get_availabe():
-    pass
+     while True:
+        system('cls')
+        try:
+            availabe = input('Disponibilidade [S/N]: ').upper()
+        except Exception as e:
+            exit_except()
+        else:
+            if  availabe == 'S' or  availabe == 'N':
+                return availabe
+            else:
+                exit_except()
 
 #Pega Valor Diaria
 def get_daily_value():
-    pass
+   while True:
+        system('cls')
+        try:
+            daily_value = float(input('Valor Diária: R$'))
+        except Exception as e:
+            exit_except()
+        else:
+            return daily_value
