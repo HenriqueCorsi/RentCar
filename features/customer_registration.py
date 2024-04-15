@@ -85,6 +85,7 @@ def get_date():
         except Exception as e:
             exit_except()
 
+#Pega Númeor Habilitação
 def get_licence_number():
     while True:
         try:
@@ -99,6 +100,7 @@ def get_licence_number():
             else:
                 exit_except()
         
+#Registro automarico da data atual
 def get_registration_date():
     registration_date = datetime.date.today()
     return registration_date
