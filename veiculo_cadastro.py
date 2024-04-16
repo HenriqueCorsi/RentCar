@@ -1,6 +1,7 @@
 # vehicle registration
 from customer_registration import exit_except
 from os import system
+from time import sleep
 
 #Pega Marca
 def get_brand():
@@ -8,6 +9,7 @@ def get_brand():
         system('cls')
         try:
             brand = input('Marca: ')
+            sleep(1)
         except Exception as e:
             exit_except()
         else:
@@ -22,6 +24,7 @@ def get_model():
         system('cls')
         try:
             model = input('Modelo: ')
+            sleep(1)
         except Exception as e:
             exit_except()
         else:
@@ -36,6 +39,7 @@ def get_year():
         system('cls')
         try:
             year = int(input('Ano: '))
+            sleep(1)
         except Exception as e:
             exit_except()
         else:
@@ -47,6 +51,7 @@ def get_plate():
         system('cls')
         try:
             plate = input('Placa: ')
+            sleep(1)
         except Exception as e:
             exit_except()
         else:
@@ -61,6 +66,7 @@ def get_category():
         system('cls')
         try:
             category = input('Categoria: ').lower()
+            sleep(1)
         except Exception as e:
             exit_except()
         else:
@@ -75,6 +81,7 @@ def get_color():
         system('cls')
         try:
             color = input('Cor: ')
+            sleep(1)
         except Exception as e:
             exit_except()
         else:
@@ -89,6 +96,7 @@ def get_type_fuel():
         system('cls')
         try:
             type_fuel = input('Tipo Combustível: ').lower()
+            sleep(1)
         except Exception as e:
             exit_except()
         else:
@@ -103,6 +111,7 @@ def get_availabe():
         system('cls')
         try:
             availabe = input('Disponibilidade [S/N]: ').upper()
+            sleep(1)
         except Exception as e:
             exit_except()
         else:
@@ -117,6 +126,7 @@ def get_daily_value():
         system('cls')
         try:
             daily_value = float(input('Valor Diária: R$'))
+            sleep(1)
         except Exception as e:
             exit_except()
         else:
