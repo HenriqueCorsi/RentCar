@@ -7,7 +7,7 @@ O objetivo deste projeto é desenvolver um sistema interno de gestão de locaç�
 O RentCar é um sistema web desenvolvido em Python para o backend. O banco de dados é implementado em MySQL. Inicialmente não terá nenhuma aplicação Web. 
 
 ## Diagrama de Entidade-Relacionamento (DER)
-![Captura de tela 2024-04-08 142117](https://github.com/HenriqueCorsi/RentCar/assets/106001465/4287e43b-65c4-4774-94f3-e62e53cab08d)
+![Captura de tela 2024-04-16 001001](https://github.com/HenriqueCorsi/RentCar/assets/106001465/c2fbf4ba-1491-4231-9ff2-53cc79016018)
 
 
 
