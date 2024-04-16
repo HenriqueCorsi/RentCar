@@ -17,7 +17,8 @@ while True:
         sleep(1)
         system('cls')
     else:
-        if select_user == 1: # Cadastro de Cliente
+        # Cadastro de Cliente
+        if select_user == 1: 
             try:
                 cpf = get_cpf()
                 first_name = get_first_name()
@@ -44,9 +45,9 @@ while True:
                 system('cls')
                 print('Cadastro Realizado com Sucesso!!')
                 sleep(1)
-            
-            break
-        elif select_user == 2: # Cadastro de Veículo
+
+        # Cadastro de Veículo
+        elif select_user == 2: 
             try:
                 plate = get_plate()
                 brand = get_brand()
@@ -74,25 +75,39 @@ while True:
                 system('cls')
                 print('Cadastro Realizado com Sucesso!!')
                 sleep(1)
-            
-            break
-        elif select_user == 3: # Vizualizar todos os Clientes Cadastrados
+
+        #Cadastrar Reserva
+        elif select_user == 3:
+            pass
+
+        # Vizualizar todos os Clientes Cadastrados
+        elif select_user == 4:  
             table = 'cliente'
             system('cls')
             sql_connector_view(table)
             break
-        elif select_user == 4: # Vizualizar todos os veículs Cadastrados
+
+        # Vizualizar todos os veículs Cadastrados
+        elif select_user == 5: 
             table = 'veiculo'
             system('cls')
             sql_connector_view(table)
             break
-        elif select_user == 5: # Sair
+
+        # Vizualizar Reservas Cadastradas
+        elif select_user == 6: 
+            pass
+
+        # Sair
+        elif select_user == 7: 
             system('cls')
             print('Até Breve!!')
             sleep(1)
             system('cls')
             break
-        else: # Valores fora do Range
+        
+        # Valores fora do Range
+        else: 
            system('cls')
            print('Valor Inválido!!')
            sleep(1)
