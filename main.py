@@ -4,7 +4,7 @@ from os import system
 from customer_registration import *
 from veiculo_cadastro import *
 from mysql_connector import sql_connector
-from view_customer import sql_connector
+from view import sql_connector
 
 while True:
     home_menu()
@@ -82,7 +82,9 @@ while True:
             sql_connector(table)
             break
         elif select_user == 4: # Vizualizar todos os veículs Cadastrados
-            pass
+            table = 'veiculo'
+            system('cls')
+            sql_connector(table)
             break
         elif select_user == 5: # Sair
             pass
