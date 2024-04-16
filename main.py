@@ -4,7 +4,7 @@ from os import system
 from customer_registration import *
 from veiculo_cadastro import *
 from mysql_connector import sql_connector
-from view import sql_connector
+from view import sql_connector_view
 
 while True:
     home_menu()
@@ -34,7 +34,7 @@ while True:
                 values = (first_name, surname, cpf, email, phone, date, licence_number, date_day)
                 markers = f'(%s, %s, %s, %s, %s, %s, %s, %s)'
 
-                sql_connector(table, formatted_column, values, markers)
+                sql_connector(table, formatted_column, values, markers)              
             except Exception as e:
                 print(f'Erro: {e}')
             else:
@@ -79,15 +79,18 @@ while True:
         elif select_user == 3: # Vizualizar todos os Clientes Cadastrados
             table = 'cliente'
             system('cls')
-            sql_connector(table)
+            sql_connector_view(table)
             break
         elif select_user == 4: # Vizualizar todos os veículs Cadastrados
             table = 'veiculo'
             system('cls')
-            sql_connector(table)
+            sql_connector_view(table)
             break
         elif select_user == 5: # Sair
-            pass
+            system('cls')
+            print('Até Breve!!')
+            sleep(1)
+            system('cls')
             break
         else: # Valores fora do Range
            system('cls')
