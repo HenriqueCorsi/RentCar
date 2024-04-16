@@ -9,7 +9,7 @@ while True:
     home_menu()
     options_menu()
     try:
-        select_user = int(input(''))
+        select_user = int(input('\n'))
     except Exception as e:
         system('cls')
         print('Valor Inválido!!')
@@ -75,10 +75,10 @@ while True:
                 sleep(1)
             
             break
-        elif select_user == 3: # Cadastro de Reserva
+        elif select_user == 3: # Vizualizar todos os Clientes Cadastrados
             pass
             break
-        elif select_user == 4: # Cadastro de Transação
+        elif select_user == 4: # Vizualizar todos os veículs Cadastrados
             pass
             break
         elif select_user == 5: # Sair
