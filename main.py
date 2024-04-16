@@ -19,9 +19,9 @@ while True:
     else:
         if select_user == 1: # Cadastro de Cliente
             try:
+                cpf = get_cpf()
                 first_name = get_first_name()
                 surname = get_surname()
-                cpf = get_cpf()
                 email = get_email()
                 phone = get_phone_number()
                 date = get_date()
@@ -29,9 +29,9 @@ while True:
                 date_day = get_registration_date()
                 
                 table = 'cliente'
-                column_customer = ('primeiro_nome', 'sobrenome', 'cpf', 'email', 'telefone', 'data_nascimento', 'num_habilitacao', 'data_registro') 
+                column_customer = ('cpf', 'primeiro_nome', 'sobrenome', 'email', 'telefone', 'data_nascimento', 'num_habilitacao', 'data_registro') 
                 formatted_column = ', '.join(column_customer)
-                values = (first_name, surname, cpf, email, phone, date, licence_number, date_day)
+                values = (cpf, first_name, surname, email, phone, date, licence_number, date_day)
                 markers = f'(%s, %s, %s, %s, %s, %s, %s, %s)'
 
                 sql_connector(table, formatted_column, values, markers)              
@@ -48,10 +48,10 @@ while True:
             break
         elif select_user == 2: # Cadastro de Veículo
             try:
+                plate = get_plate()
                 brand = get_brand()
                 model = get_model()
                 vehicle_year = get_year()
-                plate = get_plate()
                 category = get_category()
                 vehicle_color = get_color()
                 type_fuel = get_type_fuel()
@@ -59,9 +59,9 @@ while True:
                 daily_price = get_daily_value()
 
                 table = 'veiculo'
-                column_vehicle = ('marca', 'modelo', 'ano', 'placa', 'categoria', 'cor', 'tipo_combustivel', 'disponivel', 'valor_diaria')
+                column_vehicle = ('placa', 'marca', 'modelo', 'ano', 'categoria', 'cor', 'tipo_combustivel', 'disponivel', 'valor_diaria')
                 formatted_column = ', '.join(column_vehicle )
-                values = (brand, model, vehicle_year, plate, category, vehicle_color, type_fuel, availability, daily_price)
+                values = (plate, brand, model, vehicle_year, category, vehicle_color, type_fuel, availability, daily_price)
                 markers = f'(%s, %s, %s, %s, %s, %s, %s, %s, %s)'
 
                 sql_connector(table, formatted_column, values, markers)
