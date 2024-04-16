@@ -55,6 +55,20 @@ def get_plate():
             else:
                 exit_except() 
 
+#Pega Categoria
+def get_category():
+    while True:
+        system('cls')
+        try:
+            category = input('Categoria: ').lower()
+        except Exception as e:
+            exit_except()
+        else:
+            if category == 'hatch' or category == 'sedan' or category == 'suv':
+                return category
+            else:
+                exit_except()
+        
 #Pega Cor
 def get_color():
    while True:
