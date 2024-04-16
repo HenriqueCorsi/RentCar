@@ -23,17 +23,32 @@ def get_first_name():
         except Exception as e:
             exit_except()
 
-#Pega Ultimo Nome
-def get_last_name():
+#Pega Sobrenome
+def get_surname():
     while True:
         try:
             system('cls')
-            last_name = input("Último Nome: ").strip() 
-            if last_name:
-                return last_name
+            surname = input("Último Nome: ").strip() 
+            if surname:
+                return surname
             else:
                 exit_except()
                 
+        except Exception as e:
+            exit_except()
+
+#Pega CPF
+def get_cpf():
+    cpf_pattern = re.compile(r'^\d{11}$')
+
+    while True:
+        try:
+            system('cls')
+            cpf = input('CPF: ').strip()
+            if cpf and cpf_pattern.match(cpf):
+                return cpf
+            else:
+                exit_except()
         except Exception as e:
             exit_except()
 
@@ -100,7 +115,7 @@ def get_licence_number():
             else:
                 exit_except()
         
-#Registro automarico da data atual
+#Registro automatico da data atual
 def get_registration_date():
     registration_date = datetime.date.today()
     return registration_date
