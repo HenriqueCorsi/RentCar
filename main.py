@@ -19,18 +19,18 @@ while True:
         if select_user == 1: # Cadastro de Cliente
             try:
                 first_name = get_first_name()
-                last_name = get_last_name()
+                surname = get_surname()
+                cpf = get_cpf()
                 email = get_email()
                 phone = get_phone_number()
                 date = get_date()
                 licence_number = get_licence_number()
                 date_day = get_registration_date()
-                status = 1
                 
                 table = 'cliente'
-                column_customer = ('primeiro_nome', 'ultimo_nome', 'email', 'telefone', 'data_nascimento', 'num_habilitacao', 'data_registro', 'status_ativacao') 
+                column_customer = ('primeiro_nome', 'sobrenome', 'cpf', 'email', 'telefone', 'data_nascimento', 'num_habilitacao', 'data_registro') 
                 formatted_column = ', '.join(column_customer)
-                values = (first_name, last_name, email, phone, date, licence_number, date_day, status)
+                values = (first_name, surname, cpf, email, phone, date, licence_number, date_day)
 
                 sql_connector(table, formatted_column, values)
             except Exception as e:
