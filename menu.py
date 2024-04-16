@@ -7,7 +7,7 @@ def home_menu():
     print('================================')
 
 def options_menu():
-    options = ['1 -> Cadastrar Cliente', '2 -> Cadastrar Veículo', '3 -> Cadastro de Reserva', '4 -> Cadastro de Transação', '5 -> Sair']
+    options = ['1 -> Cadastrar Cliente', '2 -> Cadastrar Veículo', '3 -> Vizualizar Clientes', '4 -> Vizualzar Veículos', '5 -> Sair']
 
     for x in options:
         print(x)
