@@ -9,6 +9,22 @@ def exit_except():
     sleep(1)
     system('cls')
 
+#Pega CPF
+def get_cpf():
+    cpf_pattern = re.compile(r'^\d{11}$')
+
+    while True:
+        try:
+            system('cls')
+            cpf = input('CPF: ').strip()
+            sleep(1)
+            if cpf and cpf_pattern.match(cpf):
+                return cpf
+            else:
+                exit_except()
+        except Exception as e:
+            exit_except()
+
 #Pega Primeiro Nome
 def get_first_name():
     while True:
@@ -36,22 +52,6 @@ def get_surname():
             else:
                 exit_except()
                 
-        except Exception as e:
-            exit_except()
-
-#Pega CPF
-def get_cpf():
-    cpf_pattern = re.compile(r'^\d{11}$')
-
-    while True:
-        try:
-            system('cls')
-            cpf = input('CPF: ').strip()
-            sleep(1)
-            if cpf and cpf_pattern.match(cpf):
-                return cpf
-            else:
-                exit_except()
         except Exception as e:
             exit_except()
 
