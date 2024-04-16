@@ -1,6 +1,6 @@
 import mysql.connector
 
-def sql_connector(table, column, value):
+def sql_connector(table, column, value, markers):
     connection = mysql.connector.connect(
         host='localhost',
         user='root',
@@ -14,7 +14,7 @@ def sql_connector(table, column, value):
                 INSERT INTO {table}
                     ({column})
                 VALUES
-                    (%s, %s, %s, %s, %s, %s, %s, %s)
+                    {markers}
 '''
 
     cursor.execute(command, value) #Execua o comando SQL
@@ -23,7 +23,6 @@ def sql_connector(table, column, value):
 
     cursor.close() #Fecha conexão
     connection.close() #Fecha conexão
-
 
 
 
