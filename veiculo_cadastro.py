@@ -3,6 +3,21 @@ from customer_registration import exit_except
 from os import system
 from time import sleep
 
+#Pega Placa
+def get_plate():
+    while True:
+        system('cls')
+        try:
+            plate = input('Placa: ')
+            sleep(1)
+        except Exception as e:
+            exit_except()
+        else:
+            if len(plate) == 7:
+                return plate
+            else:
+                exit_except() 
+
 #Pega Marca
 def get_brand():
     while True:
@@ -45,21 +60,6 @@ def get_year():
         else:
             return year
         
-#Pega Placa
-def get_plate():
-    while True:
-        system('cls')
-        try:
-            plate = input('Placa: ')
-            sleep(1)
-        except Exception as e:
-            exit_except()
-        else:
-            if len(plate) == 7:
-                return plate
-            else:
-                exit_except() 
-
 #Pega Categoria
 def get_category():
     while True:
