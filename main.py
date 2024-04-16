@@ -31,8 +31,9 @@ while True:
                 column_customer = ('primeiro_nome', 'sobrenome', 'cpf', 'email', 'telefone', 'data_nascimento', 'num_habilitacao', 'data_registro') 
                 formatted_column = ', '.join(column_customer)
                 values = (first_name, surname, cpf, email, phone, date, licence_number, date_day)
+                markers = f'(%s, %s, %s, %s, %s, %s, %s, %s)'
 
-                sql_connector(table, formatted_column, values)
+                sql_connector(table, formatted_column, values, markers)
             except Exception as e:
                 print(f'Erro: {e}')
             else:
@@ -60,8 +61,9 @@ while True:
                 column_vehicle = ('marca', 'modelo', 'ano', 'placa', 'categoria', 'cor', 'tipo_combustivel', 'disponivel', 'valor_diaria')
                 formatted_column = ', '.join(column_vehicle )
                 values = (brand, model, vehicle_year, plate, category, vehicle_color, type_fuel, availability, daily_price)
+                markers = f'(%s, %s, %s, %s, %s, %s, %s, %s, %s)'
 
-                sql_connector(table, formatted_column, values)
+                sql_connector(table, formatted_column, values, markers)
             except Exception as e:
                 print(f'Erro: {e}')
             else:
