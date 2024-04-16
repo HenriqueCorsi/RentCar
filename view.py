@@ -1,6 +1,6 @@
 import mysql.connector
 
-def sql_connector(table):
+def sql_connector_view(table):
     connection = mysql.connector.connect(
         host='localhost',
         user='root',
