@@ -15,6 +15,7 @@ def get_first_name():
         try:
             system('cls')
             first_name = input("Primeiro Nome: ").strip() 
+            sleep(1)
             if first_name:
                 return first_name
             else:
@@ -29,6 +30,7 @@ def get_surname():
         try:
             system('cls')
             surname = input("Último Nome: ").strip() 
+            sleep(1)
             if surname:
                 return surname
             else:
@@ -45,6 +47,7 @@ def get_cpf():
         try:
             system('cls')
             cpf = input('CPF: ').strip()
+            sleep(1)
             if cpf and cpf_pattern.match(cpf):
                 return cpf
             else:
@@ -60,6 +63,7 @@ def get_email():
         try:
             system('cls')
             email = input("Email: ").strip() 
+            sleep(1)
             if email and email_pattern.match(email):
                 return email
             else:
@@ -75,7 +79,7 @@ def get_phone_number():
         try:
             system('cls')
             phone_number = input('Telefone: ').strip()  
-            
+            sleep(1)
             if number_pattern.match(phone_number):
                 return phone_number
             else:
@@ -92,7 +96,7 @@ def get_date():
         try:
             system('cls')
             date = input('Data Nascimento (ANO-MÊS-DIA): ')
-
+            sleep(1)
             if date_pattern.match(date):
                 return date
             else:
@@ -106,6 +110,7 @@ def get_licence_number():
         try:
             system('cls')
             licence_number = int(input('Número Habilitação: '))  
+            sleep(1)
         except Exception as e:
             exit_except()
         else:
