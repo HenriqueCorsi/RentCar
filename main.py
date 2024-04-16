@@ -50,15 +50,16 @@ while True:
                 model = get_model()
                 vehicle_year = get_year()
                 plate = get_plate()
+                category = get_category()
                 vehicle_color = get_color()
                 type_fuel = get_type_fuel()
                 availability = get_availabe()
                 daily_price = get_daily_value()
 
                 table = 'veiculo'
-                column_vehicle = ('marca', 'modelo', 'ano', 'placa', 'cor', 'tipo_combustivel', 'disponivel', 'valor_diaria')
+                column_vehicle = ('marca', 'modelo', 'ano', 'placa', 'categoria', 'cor', 'tipo_combustivel', 'disponivel', 'valor_diaria')
                 formatted_column = ', '.join(column_vehicle )
-                values = (brand, model, vehicle_year, plate, vehicle_color, type_fuel, availability, daily_price)
+                values = (brand, model, vehicle_year, plate, category, vehicle_color, type_fuel, availability, daily_price)
 
                 sql_connector(table, formatted_column, values)
             except Exception as e:
