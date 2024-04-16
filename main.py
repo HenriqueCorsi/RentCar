@@ -3,6 +3,7 @@ from time import sleep
 from os import system
 from customer_registration import *
 from veiculo_cadastro import *
+from registro_reserva import *
 from mysql_connector import sql_connector
 from view import sql_connector_view
 
@@ -78,7 +79,29 @@ while True:
 
         #Cadastrar Reserva
         elif select_user == 3:
-            pass
+            try:
+                cpf = get_cpf()
+                plate = get_plate()
+                star_date = get_start_date()
+                end_date = get_end_date()
+
+                table = 'reserva'
+                column_registration = ('cpf', 'placa', 'data_inicio', 'data_termino')
+                formatted_column = ', '.join(column_registration)
+                values = (cpf, plate, star_date, end_date)
+                markers = f'(%s, %s, %s, %s)'
+
+                sql_connector(table, formatted_column, values, markers)
+            except Exception as e:
+                print(f'Erro: {e}')
+                sleep(9)
+            else:
+                system('cls')
+                print('Carregando...')
+                sleep(1)
+                system('cls')
+                print('Cadastro Realizado com Sucesso!!')
+                sleep(1)
 
         # Vizualizar todos os Clientes Cadastrados
         elif select_user == 4:  
@@ -96,7 +119,10 @@ while True:
 
         # Vizualizar Reservas Cadastradas
         elif select_user == 6: 
-            pass
+            table = 'reserva'
+            system('cls')
+            sql_connector_view(table)
+            break
 
         # Sair
         elif select_user == 7: 
@@ -105,7 +131,7 @@ while True:
             sleep(1)
             system('cls')
             break
-        
+
         # Valores fora do Range
         else: 
            system('cls')
