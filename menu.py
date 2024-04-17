@@ -11,3 +11,4 @@ def options_menu():
 
     for x in options:
         print(x)
+        print('--------------------------------')
