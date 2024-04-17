@@ -2,10 +2,10 @@ import mysql.connector
 
 def sql_connector_view(table):
     connection = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='123456',
-        database='rentcar'
+        host='', # Insira o Host
+        user='', # Insira o User
+        password='', # Insira a seha
+        database='' # Nome da database
     )
 
     cursor = connection.cursor()
