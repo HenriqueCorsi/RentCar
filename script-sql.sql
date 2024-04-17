@@ -1,48 +1,36 @@
--- Criação da tabela Cliente
 CREATE TABLE cliente (
-    cliente_id INT AUTO_INCREMENT PRIMARY KEY,
+    cpf VARCHAR(11) PRIMARY KEY, 
     primeiro_nome VARCHAR(50),
-    ultimo_nome VARCHAR(50),
+    sobrenome VARCHAR(255),
     email VARCHAR(100),
     telefone VARCHAR(20),
     data_nascimento DATE,
-    num_habilitacao INT,
-    data_registro DATE,
-    status_ativacao INT
+    num_habilitacao VARCHAR(30),
+    data_registro DATE
 );
 
--- Criação da tabela Veiculo
 CREATE TABLE veiculo (
     veiculo_id INT AUTO_INCREMENT PRIMARY KEY,
     marca VARCHAR(50),
     modelo VARCHAR(50),
     ano INT,
     placa VARCHAR(20),
+    categoria VARCHAR(20),
     cor VARCHAR(20),
     tipo_combustivel VARCHAR(20),
-    disponivel BOOLEAN,
-    valor_diaria DECIMAL(10, 2)
+    disponivel CHAR(1) 
+    valor_diaria DECIMAL(10,2),
 );
 
--- Criação da tabela Reserva
-CREATE TABLE Reserva (
+CREATE TABLE reserva (
     reserva_id INT AUTO_INCREMENT PRIMARY KEY,
-    cliente_id INT,
+    cliente_id VARCHAR(11),
     veiculo_id INT,
+    data_reserva DATE,
     data_inicio DATE,
     data_fim DATE,
-    FOREIGN KEY (cliente_id) REFERENCES Cliente(cliente_id),
-    FOREIGN KEY (veiculo_id) REFERENCES Veiculo(veiculo_id)
-);
-
--- Criação da tabela Transacao
-CREATE TABLE Transacao (
-    transacao_id INT AUTO_INCREMENT PRIMARY KEY,
-    reserva_id INT,
-    data_hora DATETIME,
-    tipo_transacao VARCHAR(20),
-    metodo_pagamento VARCHAR(50),
-	valor_total DECIMAL(10, 2),
-    status_reserva VARCHAR(20),
-    FOREIGN KEY (reserva_id) REFERENCES Reserva(reserva_id)
+    valor_total DECIMAL(10,2),
+    -- Definir chaves estrangeiras
+    FOREIGN KEY (cliente_id) REFERENCES cliente(cpf),
+    FOREIGN KEY (veiculo_id) REFERENCES veiculo(veiculo_id)
 );
