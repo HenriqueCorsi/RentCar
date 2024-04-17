@@ -108,21 +108,30 @@ while True:
             table = 'cliente'
             system('cls')
             sql_connector_view(table)
-            break
+
+            print('=========================================================')
+            print('Pressione ENTER para voltar ao menu')
+            input()
 
         # Vizualizar todos os veículs Cadastrados
         elif select_user == 5: 
             table = 'veiculo'
             system('cls')
             sql_connector_view(table)
-            break
+            
+            print('=========================================================')
+            print('Pressione ENTER para voltar ao menu')
+            input()
 
         # Vizualizar Reservas Cadastradas
         elif select_user == 6: 
             table = 'reserva'
             system('cls')
             sql_connector_view(table)
-            break
+            
+            print('=========================================================')
+            print('Pressione ENTER para voltar ao menu')
+            input()
 
         # Sair
         elif select_user == 7: 
